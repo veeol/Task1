@@ -1,0 +1,18 @@
+[
+  {
+    "method": "add",
+    "result": 4
+  },
+  {
+    "method": "subtract",
+    "result": 7
+  },
+  {
+    "method": "multiply",
+    "result": 200
+  },
+  {
+    "method": "divide",
+    "result": 2.5
+  }
+]

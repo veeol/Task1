@@ -1,0 +1,18 @@
+[
+    {
+        "method": "add",
+        "values": [1, 3]
+    },
+    {
+        "method": "subtract",
+        "values": [10, 3]
+    },
+    {
+        "method": "multiply",
+        "values": [10, 20]
+    },
+    {
+        "method": "divide",
+        "values": [100, 40]
+    }
+]
