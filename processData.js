@@ -1,5 +1,12 @@
 const fs = require('fs');
 
+const OPERATIONS = {
+    ADD = 'add',
+    SUBTRACT = 'subtract',
+    MULTIPLY = 'multiply',
+    DIVIDE = 'divide'
+}
+
 const readInputFile = () => {
     // Read the input.json file
     const inputData = fs.readFileSync('input.json', 'utf-8');
@@ -13,23 +20,21 @@ const readInputFile = () => {
 // Function to execute the operation based on the method
 const executeOperation = (method, values) => {
     switch (method) {
-        case 'add':
+        case OPERATIONS.ADD:
             return values.reduce((a, b) => a + b, 0);
-        case 'subtract':
+        case OPERATIONS.SUBTRACT:
             return values.reduce((a, b) => a - b);
-        case 'multiply':
+        case OPERATIONS.MULTIPLY:
             return values.reduce((a, b) => a * b, 1);
-        case 'divide':
+        case OPERATIONS.DIVIDE:
             return values.reduce((a, b) => a / b);
         default:
             throw new Error(`Unknown method: ${method}`);
     }
 };
 
-const operations = readInputFile();
-
 // Array to store the results of the operations
-const results = operations.map(operation => {
+const results = readInputFile().map(operation => {
     const { method, values } = operation;
     try {
         const result = executeOperation(method, values);
